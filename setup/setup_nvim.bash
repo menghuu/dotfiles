@@ -15,5 +15,7 @@ curl -fLo nvim/.config/nvim/autoload/plug.vim --create-dirs \
 
 # vim backup need this dir exist
 mkdir -p ~/.local/share/nvim_vim/backup
-os_command_is_installed nvim && nvim -c ':PlugUpdate'
-os_command_is_installed \vim && \vim -c ':PlugUpdate'
+
+cd nvim/.config/nvim
+
+make clean && make install
