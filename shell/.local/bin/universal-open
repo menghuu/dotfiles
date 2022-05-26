@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# xdg-open for linux, open for macos, Invoke-Item(powershell) for windows(wsl2), cygstart for cygwin
+
+[[ "$(uname)" == "Darwin" ]] && open "$@"
+
+[[ "$(uname)" =~ CYGWIN ]] && cygstart "$@"
+
+[[ -n "$WSL_DISTRO_NAME" ]] && {
+  filepaths=''
+  for path in "$@"; do
+    filepaths="$filepath $(wslpath -w "$path")"
+  done
+  powershell.exe -Command "Invoke-Item $filepaths"
+}
+
+
+# 1. copy this file into ~/.local/bin
+# 2. chmod u+x ~/.local/bin/universal-open
+# 3. add ~/.local/bin into your PATH environment variable
+# 4. you can alias this file
+# alias oopen='universal-open'
