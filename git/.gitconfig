@@ -1,0 +1,40 @@
+[user]
+    email = mail@meng.hu
+    name = hu meng
+[core]
+	editor = nvim
+	autocrlf = input
+	safecrlf = warn
+	quotepath = false
+[commit]
+	template = ~/.config/git/git-commit-template.txt
+[gui]
+	encoding = utf-8
+[i18n "commit"]
+	encoding = utf-8
+
+[i18n]
+	logoutputencoding = utf-8
+[alias]
+	clone-all = clone --recurse-submodules
+	pull-all = pull --recurse-submodules
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%C(yellow)%h%Creset %ad | %C(green)%s%Creset%Cred%d%Creset [%an]\" --graph --date=short
+
+[core]
+pager = ~/.local/bin/pager.bash
+[interactive]
+diffFilter = ~/.local/bin/pager.bash --color-only
+[merge]
+conflictstyle = diff3
+[diff]
+colorMoved = default
+[delta "default"]
+file-decoration-style= blue box
+hunk-header-decoration-style = purple ol
+[delta]
+features = default
+navigate = true  # use n and N to move between diff sections
