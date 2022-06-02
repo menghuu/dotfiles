@@ -659,7 +659,8 @@ function s:setup_coc_on_support_filetype()
 endfunction
 augroup configcoc
   autocmd!
-  autocmd configcoc Filetype json,python,vim call s:setup_coc_on_support_filetype()
+  autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go call s:setup_coc_on_support_filetype()
+  autocmd configcoc Filetype markdown noremap <buffer> <S-M-f> :CocCommand markdownlint.fixAll<cr>
 augroup END
 
 call plug#end()

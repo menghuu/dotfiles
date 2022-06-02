@@ -31,7 +31,7 @@ os_command_is_installed pipx && {
 
 
 # for python and docker
-npm_install pyright dockerfile-language-server-nodejs
+npm_install pyright dockerfile-language-server-nodejs markdownlint
 
 
 # for go
