@@ -148,3 +148,17 @@ os_command_is_installed trash && {
     alias rm='trash'
     alias rrm='\rm'
 }
+
+
+# npm
+os_command_is_installed npm && {
+    alias cnpm="npm --registry=https://registry.npmmirror.com \
+        --cache=$HOME/.npm/.cache/cnpm \
+        --disturl=https://npmmirror.com/mirrors/node \
+        --userconfig=$HOME/.cnpmrc"
+
+    os_command_is_installed yarn && {
+        utils_add_path "$HOME/.yarn/bin" "$HOME/.config/yarn/global/node_modules/.bin"
+        export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+    }
+}
