@@ -10,7 +10,7 @@
 - 参考的安装步骤
   - <https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/>
   - <https://mirrors.tuna.tsinghua.edu.cn/help/homebrew-bottles/>
-  - [这个脚本](./install/setup_brew.bash)中查看、复制相应的命令来执行
+  - [这个脚本](./setup/setup_brew.bash)中查看、复制相应的命令来执行
   - 安装步骤一定不要跳过，有比较多的坑
 
 ```bash
