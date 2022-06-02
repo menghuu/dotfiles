@@ -12,5 +12,6 @@
         "--stdio"
       ]
     }
-  }
+  },
+  "Lua.telemetry.enable": false
 }
