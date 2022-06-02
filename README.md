@@ -1,12 +1,12 @@
 ## 依赖
 
 - `git`
-- `ruby` 可选，如果不安装linuxbrew、homebrew，则可以不需要 `ruby`
+- `ruby` 可选，如果不安装 linuxbrew、homebrew，则可以不需要 `ruby`
 
 ## linuxbrew/homebrew
 
-- 如果没有root权限;或者不想用root权限安装包;或者在macos中。需要安装linuxbrew、homebrew
-- 此依赖于`ruby`
+- 如果没有 root 权限；或者不想用 root 权限安装包；或者在 macos 中。需要安装 linuxbrew、homebrew
+- 此依赖于 `ruby`
 - 参考的安装步骤
   - <https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/>
   - <https://mirrors.tuna.tsinghua.edu.cn/help/homebrew-bottles/>
