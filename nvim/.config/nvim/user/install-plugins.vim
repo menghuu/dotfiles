@@ -410,12 +410,10 @@ Plug 'dbmrq/vim-chalk'
 LoadScript configure/plugins/vim_chalk.vim
 
 
-" more filetype support{{{
 " markdown support
 Plug 'preservim/vim-markdown'
 let g:vim_markdown_math = 1
 " Plug 'mzlogin/vim-markdown-toc'
-
 
 Plug 'hotoo/pangu.vim'
 
@@ -424,7 +422,17 @@ Plug 'cespare/vim-toml'
 
 " json support
 Plug 'elzr/vim-json'
-" }}}
+
+Plug 'z0mbix/vim-shfmt'
+function s:config_shfmt()
+  if executable('shfmt')
+    let &l:formatprg='shfmt -i ' . &l:shiftwidth . ' -ln posix -sr -ci -s'
+  endif
+endfunction
+augroup config_shfmt
+  autocmd!
+  autocmd config_shfmt FileType sh,bash,mksh call s:config_shfmt()
+augroup END
 
 
 "Tabular /= 通过=来对其文本
@@ -668,8 +676,8 @@ augroup configcoc
   autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go call s:setup_coc_on_support_filetype()
   autocmd configcoc Filetype markdown nnoremap <buffer> <S-M-f> :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
   autocmd configcoc Filetype markdown nnoremap <buffer> <leader>lf :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
-  autocmd configcoc Filetype vim,bash,sh nnoremap <buffer> <S-M-f> <esc>:PanguAll<cr>gg=G<C-o>
-  autocmd configcoc Filetype vim,bash,sh nnoremap <buffer> <leader>lf <esc>:PanguAll<cr>gg=G<C-o>
+  autocmd configcoc Filetype vim,bash,sh,mksh nnoremap <buffer> <S-M-f> <esc>:PanguAll<cr>gg=G<C-o>
+  autocmd configcoc Filetype vim,bash,sh,mksh nnoremap <buffer> <leader>lf <esc>:PanguAll<cr>gg=G<C-o>
 augroup END
 
 call plug#end()
