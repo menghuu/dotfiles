@@ -21,3 +21,9 @@ chmod u+x ./install/setup_brew.bash
 ## 其他的软件
 
 参见 `setup/setup_packages.bash`
+
+## stow it
+
+```sh
+stow ~ main shell nvim git
+```

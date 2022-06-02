@@ -8,7 +8,7 @@ root = true
 # use unix/linux style
 end_of_line = lf
 # https://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file
-insert_final_newline = true
+insert_final_newline = false
 trim_trailing_whitespace = true
 
 # Matches multiple files with brace expansion notation
