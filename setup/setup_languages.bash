@@ -26,7 +26,7 @@ os_command_is_installed pipx && {
 }
 
 # for python and docker
-npm_install pyright dockerfile-language-server-nodejs markdownlint
+npm_install pyright dockerfile-language-server-nodejs markdownlint markdownlint-cli markdownlint-cli2
 
 # for go
 go install golang.org/x/tools/gopls@latest
