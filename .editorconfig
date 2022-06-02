@@ -18,6 +18,8 @@ charset = utf-8
 
 # 4 space indentation
 [*.py]
+# see https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html
+profile = black
 indent_style = space
 indent_size = 4
 
