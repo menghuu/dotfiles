@@ -44,6 +44,9 @@ Plug 'tpope/vim-repeat'
 
 " :Obsess 开始持续自动记录；:Obsess! 结束记录。扩展 vim 原生 `:mksession`
 Plug 'tpope/vim-obsession'
+noremap <leader>ss :Obsession vim-session<cr>
+noremap <leader>sr :so vim-session<cr>
+
 "  Plug 'tpope/vim-endwise'
 
 
