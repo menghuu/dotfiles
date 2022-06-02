@@ -1,0 +1,16 @@
+{
+  "json.enable": true,
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
+  "languageserver": {
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": [
+        "dockerfile"
+      ],
+      "args": [
+        "--stdio"
+      ]
+    }
+  }
+}
