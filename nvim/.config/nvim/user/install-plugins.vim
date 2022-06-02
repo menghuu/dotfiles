@@ -668,8 +668,8 @@ augroup configcoc
   autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go call s:setup_coc_on_support_filetype()
   autocmd configcoc Filetype markdown nnoremap <buffer> <S-M-f> :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
   autocmd configcoc Filetype markdown nnoremap <buffer> <leader>lf :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
-  autocmd configcoc Filetype vim nnoremap <buffer> <S-M-f> <esc>:PanguAll<cr>gg=G<C-o>
-  autocmd configcoc Filetype vim nnoremap <buffer> <leader>lf <esc>:PanguAll<cr>gg=G<C-o>
+  autocmd configcoc Filetype vim,bash,sh nnoremap <buffer> <S-M-f> <esc>:PanguAll<cr>gg=G<C-o>
+  autocmd configcoc Filetype vim,bash,sh nnoremap <buffer> <leader>lf <esc>:PanguAll<cr>gg=G<C-o>
 augroup END
 
 call plug#end()
