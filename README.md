@@ -14,7 +14,7 @@
   - 安装步骤一定不要跳过，有比较多的坑
 
 ```bash
-chmod u+x ./install/setup_brew.bash
+chmod u+x ./setup/setup_brew.bash
 ./setup/setup_brew.bash
 ```
 
