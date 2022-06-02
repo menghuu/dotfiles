@@ -396,6 +396,8 @@ inoremap <silent> <A-=> <C-\><C-N>:TmuxNavigatePrevious<cr>
 Plug 'skywind3000/vim-terminal-help'
 Plug 'wincent/terminus'
 Plug 'voldikss/vim-floaterm'
+command! Ranger FloatermNew --width=0.8 --height=0.8 ranger --cmd 'set show_hidden=true'
+command! Lazygit FloatermNew --width=0.8 --height=0.8 lazygit
 
 
 Plug 'skywind3000/vim-dict'
@@ -599,11 +601,6 @@ augroup dirvish_config
 augroup END
 
 Plug 'jdhao/better-escape.vim'
-
-
-Plug 'francoiscabrol/ranger.vim'
-let g:ranger_map_keys = 0
-let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
 
 " 重新实现 bdelete bwipepout，关闭 buffer 但是并不改变 layout
