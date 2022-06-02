@@ -8,7 +8,7 @@ endfunction
 
 call plug#begin(get(g:, 'home', '~/.vim') . '/plugged')
 
-" 只在vim中安装、启用这些插件
+" 只在 vim 中安装、启用这些插件
 if is_vim
   LoadScript user/_only_vim_plugins.vim
 endif
@@ -23,7 +23,7 @@ Plug 'yianwillis/vimcdoc'
 Plug 'tpope/vim-sensible'
 
 " 自动设置 shiftwidth expandtab tabstop textwidth endofline fileformat fileencoding bomb
-Plug 'tpope/vim-sleuth', Cond(is_nvim) " vim 下会使用vim-polyglot, 其内部自带了一个版本的此插件
+Plug 'tpope/vim-sleuth', Cond(is_nvim) " vim 下会使用 vim-polyglot, 其内部自带了一个版本的此插件
 " editorconfig 来配置相应的 indent 和其他配置
 Plug 'editorconfig/editorconfig-vim'
 
@@ -42,7 +42,7 @@ Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-characterize'
 
 
-" :Obsess 开始持续自动记录; :Obsess! 结束记录。扩展 vim 原生 `:mksession`
+" :Obsess 开始持续自动记录；:Obsess! 结束记录。扩展 vim 原生 `:mksession`
 Plug 'tpope/vim-obsession'
 "  Plug 'tpope/vim-endwise'
 
@@ -62,14 +62,14 @@ xnoremap <leader>r <Plug>ReplaceWithRegisterVisual
 " Plug 'kana/vim-grex' " 搜索(/)后，:[range]Grey 删除这些被搜索到的行
 
 
-" vim的自动fold会减慢vim的速度，因为过早的计算fold，这个插件解决这个问题
+" vim 的自动 fold 会减慢 vim 的速度，因为过早的计算 fold，这个插件解决这个问题
 Plug 'Konfekt/FastFold'
 LoadScript configure/plugins/fastfold.vim
 
 " python 的 fold 增强
 Plug 'tmhedberg/SimpylFold', {'for': 'python'}
 
-" 自动设置paste位
+" 自动设置 paste 位
 Plug 'roxma/vim-paste-easy'
 
 " 增强 quickfix 功能 TODO
@@ -202,18 +202,18 @@ augroup END
 
 
 " surround + text-object {{{
-" 增加更多的 文本对象，准确来说，是增加了 surround文本对象
-" cs'" 会将 'hello world' 变成 "hello world". s' 就是surround the 单引号，最前面的 c 是 vim 原生的 change 命令
+" 增加更多的 文本对象，准确来说，是增加了 surround 文本对象
+" cs'" 会将 'hello world' 变成 "hello world". s' 就是 surround the 单引号，最前面的 c 是 vim 原生的 change 命令
 " 新增一个 ys 的 动作、文本对象，Hel|lo world! 执行 ysiw] 将会 变成 [hello] world!, yss] 将会编程 [hello world!]
 Plug 'tpope/vim-surround'
 " 更多的文本对象
 Plug 'kana/vim-textobj-user'
 " https://github.com/kana/vim-textobj-user/wiki
-" die/dae 删除整个buffer
+" die/dae 删除整个 buffer
 Plug 'kana/vim-textobj-entire'
 " dil/dal 删除整行
 Plug 'kana/vim-textobj-line'
-" dif/daf 删除函数，nvim中可以使用 nvim-treesitter-textobjects 的 @function.inner 和 @function.outer
+" dif/daf 删除函数，nvim 中可以使用 nvim-treesitter-textobjects 的 @function.inner 和 @function.outer
 " 但是此插件只支持 vim c java 这三个语言，直接不用了
 " Plug 'kana/vim-textobj-function'
 " di_/da_ 使用 targets.vim 来实现了这个功能
@@ -229,7 +229,7 @@ Plug 'kana/vim-textobj-fold'
 Plug 'rhysd/vim-textobj-anyblock'
 " diy 删除 syntax 内的内容， 感觉没用啊
 " Plug 'kana/vim-textobj-syntax'
-" 实际上拓展了vim自身的 is as 功能，但是没看明白到底扩展了啥
+" 实际上拓展了 vim 自身的 is as 功能，但是没看明白到底扩展了啥
 " Plug 'preservim/vim-textobj-sentence'
 " difa 会删除 axxyfdfa 之间的内容 即 删除 xxyfdf
 " 这个与 nvim-treesitter-textobjects 的 @function.inner 冲突
@@ -238,7 +238,7 @@ Plug 'rhysd/vim-textobj-anyblock'
 "  Plug 'tpope/vim-jdaddy'
 " }}}
 " 此插件更多在乎 括号、引号 或者类似的逗号这样的分隔符的操作，比如 di, 会删除 两个逗号之间的内容
-" 除此之外，还能实现 n(next下一个)括号中的内容的操作比如 din) 会删除下一个括号内的内容， 或者 d2iN) 会删除前面第二个
+" 除此之外，还能实现 n（next 下一个）括号中的内容的操作比如 din) 会删除下一个括号内的内容， 或者 d2iN) 会删除前面第二个
 " 注意 N 是修改后的，原始是 l，但是与 textobj-line 的冲突了
 " https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 Plug 'wellle/targets.vim'
@@ -251,10 +251,10 @@ let g:targets_nl = 'nN'
 Plug 'liuchengxu/vim-clap', { 'do': { -> clap#installer#force_download() } }
 
 
-" s 搜索下面的内容， S搜索上面的内容
-" 使用; ,来往下和网上继续搜索
+" s 搜索下面的内容， S 搜索上面的内容
+" 使用；,来往下和网上继续搜索
 Plug 'justinmk/vim-sneak'
-" let g:sneak#label = 1 " 给sneak 增加了 类似 easymotion 的提示功能
+" let g:sneak#label = 1 " 给 sneak 增加了 类似 easymotion 的提示功能
 let g:sneak#s_next = 1
 
 
@@ -284,7 +284,7 @@ Plug 'osyo-manga/vim-anzu'
 map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
 map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
 
-" 更聪明的f
+" 更聪明的 f
 Plug 'rhysd/clever-f.vim'
 
 
@@ -304,12 +304,12 @@ map <M-W> <Plug>(expand_region_shrink)
 
 " :Remove :Delete :Move :Rename :Copy :Duplicate
 " :Chmod :Mkdir :Cfind :Clocate :SudoWrite :SudoEdit
-" :Lfind :Llocate :Wall 写入所有打开的window
+" :Lfind :Llocate :Wall 写入所有打开的 window
 Plug 'tpope/vim-eunuch', Cond(is_unixlike)
-" 增加了很多好用的[ ]快捷键, 比如
-" o[n 开启行号; o]h 关闭搜索高亮; o]x 关闭 cursorline cursorcolumn
+" 增加了很多好用的[ ]快捷键，比如
+" o[n 开启行号；o]h 关闭搜索高亮；o]x 关闭 cursorline cursorcolumn
 " [<space> 在当前行之上添加新行
-" [f 前一个文件; ]n 跳转SCM冲突的位置
+" [f 前一个文件；]n 跳转 SCM 冲突的位置
 Plug 'tpope/vim-unimpaired'
 
 
@@ -347,17 +347,17 @@ Plug 'ap/vim-css-color'
 
 " tmux {{{
 " :Tmux send tmux command
-" :Tyank :Tput 访问tmux的buffer
-" :Twrite 将内容发送给别的pane
-" :Tattach 允许attach到非vim所在的tmux session中
+" :Tyank :Tput 访问 tmux 的 buffer
+" :Twrite 将内容发送给别的 pane
+" :Tattach 允许 attach 到非 vim 所在的 tmux session 中
 Plug 'tpope/vim-tbone'
 
 
-" 更好的在vim和tmux中移动 https://zhuanlan.zhihu.com/p/432256727
+" 更好的在 vim 和 tmux 中移动 https://zhuanlan.zhihu.com/p/432256727
 Plug 'christoomey/vim-tmux-navigator'
 let g:tmux_navigator_no_mappings = 1
 " 使用 <M-q> 也可以，这个设置来自 https://github.com/skywind3000/vim-terminal-help 的定义
-" 来离开terminal的insert模式，进入normal模式
+" 来离开 terminal 的 insert 模式，进入 normal 模式
 tnoremap <Esc> <C-\><C-n>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 tnoremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<cr>
@@ -367,7 +367,7 @@ tnoremap <silent> <A-l> <C-\><C-N>:TmuxNavigateRight<cr>
 tnoremap <silent> <A-=> <C-\><C-N>:TmuxNavigatePrevious<cr>
 if has('nvim')
 else
-  " 修复一些奇奇怪怪的bug，实现：在所有模式下使用alt键了，包括insert模式
+  " 修复一些奇奇怪怪的 bug，实现：在所有模式下使用 alt 键了，包括 insert 模式
   " for i in range(65,90) + range(97,122)
   "   let c = nr2char(i)
   "   exec "map \e".c." <M-".c.">"
@@ -400,7 +400,7 @@ Plug 'skywind3000/vim-dict'
 
 Plug 'mbbill/undotree'
 
-" 更好的 zf 创建fold marker的功能，
+" 更好的 zf 创建 fold marker 的功能，
 Plug 'dbmrq/vim-chalk'
 LoadScript configure/plugins/vim_chalk.vim
 
@@ -410,6 +410,9 @@ LoadScript configure/plugins/vim_chalk.vim
 Plug 'preservim/vim-markdown'
 let g:vim_markdown_math = 1
 " Plug 'mzlogin/vim-markdown-toc'
+
+
+Plug 'hotoo/pangu.vim'
 
 " toml support
 Plug 'cespare/vim-toml'
@@ -467,11 +470,11 @@ Plug 'wesQ3/vim-windowswap'
 " Plug 'chrisbra/NrrwRgn'
 
 
-" 将你的浏览器的输入框也使用neovim来编辑
+" 将你的浏览器的输入框也使用 neovim 来编辑
 "  Plug 'glacambre/firenvim', Cond(is_nvim, { 'do': { _ -> firenvim#install(0) } })
 
 
-" 类似于vscode的task，需要更加详细的配置 TODO
+" 类似于 vscode 的 task，需要更加详细的配置 TODO
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 
@@ -498,7 +501,7 @@ let g:bookmark_auto_save_file = $HOME . '/.local/share/nvim_vim/bookmarks'
 " TODO:
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" TODO: 更多关于使用vim debug配置 {{{
+" TODO: 更多关于使用 vim debug 配置 {{{
 " Plug 'mfussenegger/nvim-dap', Cond(is_nvim)
 Plug 'puremourning/vimspector', Cond(is_vim && v:version>=8200)
 " }}}
@@ -520,8 +523,9 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'rafamadriz/friendly-snippets'
+" Plug 'rafamadriz/friendly-snippets'
 Plug 'honza/vim-snippets'
+
 
 " view lsp-symbols and tags in neovim/vim
 Plug 'liuchengxu/vista.vim'
@@ -598,7 +602,8 @@ Plug 'francoiscabrol/ranger.vim'
 let g:ranger_map_keys = 0
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
-" 重新实现bdelete bwipepout，关闭buffer但是并不改变layout
+
+" 重新实现 bdelete bwipepout，关闭 buffer 但是并不改变 layout
 " https://github.com/moll/vim-bbye
 Plug 'moll/vim-bbye'
 nnoremap \c <cmd>Bdelete<cr>
@@ -613,16 +618,16 @@ let g:coc_snippet_next = '<tab>'
 function s:setup_coc_on_support_filetype()
   " 使用 vim 内置的 format 功能吧
   setl formatexpr=CocAction('formatSelected')
-  " 映射成vscode的快捷键
-  noremap <buffer> <F8> <Plug>(coc-diagnostic-next)
-  noremap <buffer> <S-F8> <Plug>(coc-diagnostic-prev)
-  noremap <buffer> <F2> <Plug>(coc-rename)
-  noremap <buffer> <S-M-f> <Plug>(coc-format)
-  noremap <buffer> <F12> <Plug>(coc-definition)
-  noremap <buffer> <C-F12> <Plug>(coc-implementation)
-  noremap <buffer> <S-F12> <Plug>(coc-references)
-  noremap <buffer> <c-space> <Plug>(coc-fix-current)
-  noremap <buffer> <c-i> <Plug>(coc-fix-current)
+  " 映射成 vscode 的快捷键
+  nnoremap <buffer> <F8> <Plug>(coc-diagnostic-next)
+  nnoremap <buffer> <S-F8> <Plug>(coc-diagnostic-prev)
+  nnoremap <buffer> <F2> <Plug>(coc-rename)
+  nnoremap <buffer> <S-M-f> :PanguAll<cr><Plug>(coc-format)
+  nnoremap <buffer> <F12> <Plug>(coc-definition)
+  nnoremap <buffer> <C-F12> <Plug>(coc-implementation)
+  nnoremap <buffer> <S-F12> <Plug>(coc-references)
+  nnoremap <buffer> <c-space> <Plug>(coc-fix-current)
+  nnoremap <buffer> <c-i> <Plug>(coc-fix-current)
 
   " noremap <buffer> <leader>ln <Plug>(coc-diagnostic-next)
   " noremap <buffer> <leader>lp <Plug>(coc-diagnostic-prev)
@@ -632,10 +637,11 @@ function s:setup_coc_on_support_filetype()
   " noremap <buffer> <leader>li <Plug>(coc-implementation)
   " noremap <buffer> <leader>lr <Plug>(coc-references)
   " noremap <buffer> <leader>li <Plug>(coc-fix-current)
-  noremap <buffer> <leader>lc <Plug>(coc-codeaction-cursor)
-  noremap <buffer> <leader>ll <Plug>(coc-codeaction-line)
-  noremap <buffer> <leader>la <Plug>(coc-codeaction)
-  noremap <buffer> <leader>ls <Plug>(coc-codeaction-selected)
+  nnoremap <buffer> <leader>lc <Plug>(coc-codeaction-cursor)
+  nnoremap <buffer> <leader>ll <Plug>(coc-codeaction-line)
+  nnoremap <buffer> <leader>la <Plug>(coc-codeaction)
+  nnoremap <buffer> <leader>ls <Plug>(coc-codeaction-selected)
+  nnoremap <buffer> <leader>lf :PanguAll<cr><Plug>(coc-format)
 
   xmap <buffer> if <Plug>(coc-funcobj-i)
   omap <buffer> if <Plug>(coc-funcobj-i)
@@ -660,8 +666,10 @@ endfunction
 augroup configcoc
   autocmd!
   autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go call s:setup_coc_on_support_filetype()
-  autocmd configcoc Filetype markdown noremap <buffer> <S-M-f> :CocCommand markdownlint.fixAll<cr>
-  autocmd configcoc Filetype vim noremap <buffer> <S-M-f> gg=G<C-o>
+  autocmd configcoc Filetype markdown nnoremap <buffer> <S-M-f> :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
+  autocmd configcoc Filetype markdown nnoremap <buffer> <leader>lf :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
+  autocmd configcoc Filetype vim nnoremap <buffer> <S-M-f> <esc>:PanguAll<cr>gg=G<C-o>
+  autocmd configcoc Filetype vim nnoremap <buffer> <leader>lf <esc>:PanguAll<cr>gg=G<C-o>
 augroup END
 
 call plug#end()
