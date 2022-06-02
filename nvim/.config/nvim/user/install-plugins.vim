@@ -415,6 +415,7 @@ Plug 'preservim/vim-markdown'
 let g:vim_markdown_math = 1
 " Plug 'mzlogin/vim-markdown-toc'
 
+" 给中文和英文之间增加空格
 Plug 'hotoo/pangu.vim'
 
 " toml support
@@ -630,7 +631,7 @@ function s:setup_coc_on_support_filetype()
   nnoremap <buffer> <F8> <Plug>(coc-diagnostic-next)
   nnoremap <buffer> <S-F8> <Plug>(coc-diagnostic-prev)
   nnoremap <buffer> <F2> <Plug>(coc-rename)
-  nnoremap <buffer> <S-M-f> :PanguAll<cr><Plug>(coc-format)
+  nnoremap <buffer> <S-M-f> :PanguAll<cr>gg=G<C-o>
   nnoremap <buffer> <F12> <Plug>(coc-definition)
   nnoremap <buffer> <C-F12> <Plug>(coc-implementation)
   nnoremap <buffer> <S-F12> <Plug>(coc-references)
@@ -649,7 +650,7 @@ function s:setup_coc_on_support_filetype()
   nnoremap <buffer> <leader>ll <Plug>(coc-codeaction-line)
   nnoremap <buffer> <leader>la <Plug>(coc-codeaction)
   nnoremap <buffer> <leader>ls <Plug>(coc-codeaction-selected)
-  nnoremap <buffer> <leader>lf :PanguAll<cr><Plug>(coc-format)
+  nnoremap <buffer> <leader>lf :PanguAll<cr>gg=G<C-o>
 
   xmap <buffer> if <Plug>(coc-funcobj-i)
   omap <buffer> if <Plug>(coc-funcobj-i)
@@ -673,11 +674,9 @@ function s:setup_coc_on_support_filetype()
 endfunction
 augroup configcoc
   autocmd!
-  autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go call s:setup_coc_on_support_filetype()
+  autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go,vim,bash,sh,mksh call s:setup_coc_on_support_filetype()
   autocmd configcoc Filetype markdown nnoremap <buffer> <S-M-f> :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
   autocmd configcoc Filetype markdown nnoremap <buffer> <leader>lf :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
-  autocmd configcoc Filetype vim,bash,sh,mksh nnoremap <buffer> <S-M-f> <esc>:PanguAll<cr>gg=G<C-o>
-  autocmd configcoc Filetype vim,bash,sh,mksh nnoremap <buffer> <leader>lf <esc>:PanguAll<cr>gg=G<C-o>
 augroup END
 
 call plug#end()
