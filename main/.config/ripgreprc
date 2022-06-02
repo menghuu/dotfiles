@@ -1,0 +1,15 @@
+
+# 在家目录查找的时候，这些东西其实不需要搜索，虽然很少在这个地方搜索
+--glob=!$HOME/.linuxbrew
+--glob=!$HOME/.homebrew
+--glob=!$HOME/anaconda3
+--glob=!$HOME/miniconda3
+--glob=!$HOME/ghq
+--glob=!$HOME/.tmux/plugins
+# wsl2 连接到了windows的家目录下了，直接去掉，不去搜索这里
+--glob=!$HOME/winhome
+# 有时候即使取消了搜索隐藏文件的限制，我们也不想搜索.git目录
+--glob=!.git
+
+
+--smart-case

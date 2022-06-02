@@ -1,0 +1,7 @@
+language: 'zh'
+gui:
+  theme:
+    selectedLineBgColor:
+      - underline
+    selectedRangeBgColor:
+      - reverse

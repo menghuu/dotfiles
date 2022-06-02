@@ -1,0 +1,12 @@
+github:
+- name: stedolan/jq
+  description: Command-line JSON processor
+  owner: stedolan
+  repo: jq
+  release:
+    name: jq
+    tag: jq-1.6
+  command:
+    link:
+    - from: '*jq*'
+      to: jq

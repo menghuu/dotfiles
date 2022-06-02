@@ -1,0 +1,12 @@
+$HOME/.linuxbrew
+$HOME/.homebrew
+$HOME/anaconda3
+$HOME/miniconda3
+$HOME/ghq
+$HOME/.tmux/plugins
+# wsl2 连接到了windows的家目录下了，直接去掉，不去搜索这里
+$HOME/winhome
+# 有时候即使取消了搜索隐藏文件的限制，我们也不想搜索.git目录
+.git
+
+# 这个文件似乎没有用
