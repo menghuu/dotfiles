@@ -1,8 +1,8 @@
 " Lazy loading
 " From https://github.com/junegunn/vim-plug/wiki/faq#conditional-activation
 function! Cond(cond, ...)
-    let opts = get(a:000, 0, {})
-    return a:cond ? opts : extend(opts, { 'on': [], 'for': [], 'do': 'true'})
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [], 'do': 'true'})
 endfunction
 
 
@@ -148,16 +148,16 @@ function s:config_wilder()
         \       'fuzzy_filter': has('nvim') ? wilder#lua_fzy_filter() : wilder#vim_fuzzy_filter(),
         \     }),
         \     [
-        \       wilder#check({_, x -> empty(x)}),
-        \       wilder#history(),
-        \     ],
-        \     wilder#python_search_pipeline({
-        \       'pattern': wilder#python_fuzzy_pattern({
-        \         'start_at_boundary': 0,
-        \       }),
-        \     }),
-        \   ),
-        \ ])
+          \       wilder#check({_, x -> empty(x)}),
+          \       wilder#history(),
+          \     ],
+          \     wilder#python_search_pipeline({
+          \       'pattern': wilder#python_fuzzy_pattern({
+          \         'start_at_boundary': 0,
+          \       }),
+          \     }),
+          \   ),
+          \ ])
 
   let s:highlighters = [
         \ wilder#pcre2_highlighter(),
@@ -169,18 +169,18 @@ function s:config_wilder()
         \ 'empty_message': wilder#popupmenu_empty_message_with_spinner(),
         \ 'highlighter': s:highlighters,
         \ 'left': [
-        \   ' ',
-        \   wilder#popupmenu_devicons(),
-        \   wilder#popupmenu_buffer_flags({
-        \     'flags': ' a + ',
-        \     'icons': {'+': '', 'a': '', 'h': ''},
-        \   }),
-        \ ],
-        \ 'right': [
-        \   ' ',
-        \   wilder#popupmenu_scrollbar(),
-        \ ],
-        \ }))
+          \   ' ',
+          \   wilder#popupmenu_devicons(),
+          \   wilder#popupmenu_buffer_flags({
+          \     'flags': ' a + ',
+          \     'icons': {'+': '', 'a': '', 'h': ''},
+          \   }),
+          \ ],
+          \ 'right': [
+            \   ' ',
+            \   wilder#popupmenu_scrollbar(),
+            \ ],
+            \ }))
 
   let s:wildmenu_renderer = wilder#wildmenu_renderer({
         \ 'highlighter': s:highlighters,
@@ -320,7 +320,7 @@ Plug 'itchyny/vim-gitbranch'
 " }}}
 
 if has("patch-8.1.0360")
-    set diffopt+=internal,algorithm:patience
+  set diffopt+=internal,algorithm:patience
 endif
 Plug 'chrisbra/vim-diff-enhanced'
 
@@ -328,7 +328,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 " 使用 ALT+e 会在不同窗口/标签上显示 A/B/C 等编号，然后字母直接跳转
 Plug 't9md/vim-choosewin'
 let g:choosewin_overlay_enable = 1
- nmap <M-i> <Plug>(choosewin)
+nmap <M-i> <Plug>(choosewin)
 
 " gcc <virtual-mode>gc
 Plug 'tpope/vim-commentary'
@@ -367,15 +367,15 @@ tnoremap <silent> <A-l> <C-\><C-N>:TmuxNavigateRight<cr>
 tnoremap <silent> <A-=> <C-\><C-N>:TmuxNavigatePrevious<cr>
 if has('nvim')
 else
-    " 修复一些奇奇怪怪的bug，实现：在所有模式下使用alt键了，包括insert模式
-    " for i in range(65,90) + range(97,122)
-    "   let c = nr2char(i)
-    "   exec "map \e".c." <M-".c.">"
-    "   exec "map! \e".c." <M-".c.">"
+  " 修复一些奇奇怪怪的bug，实现：在所有模式下使用alt键了，包括insert模式
+  " for i in range(65,90) + range(97,122)
+  "   let c = nr2char(i)
+  "   exec "map \e".c." <M-".c.">"
+  "   exec "map! \e".c." <M-".c.">"
 
-    "   exec "imap \e".c." <M-".c.">"
-    "   exec "imap \e".c." <M-".c.">"
-    " endfor
+  "   exec "imap \e".c." <M-".c.">"
+  "   exec "imap \e".c." <M-".c.">"
+  " endfor
 endif
 noremap <silent> <A-h> <C-\><C-N>:TmuxNavigateLeft<cr>
 noremap <silent> <A-j> <C-\><C-N>:TmuxNavigateDown<cr>
@@ -570,7 +570,7 @@ Plug 'roginfarrer/vim-dirvish-dovish', {'branch': 'main'}
 let g:dirvish_dovish_map_keys = 0
 function s:remap_dirvish_dovish()
   " if !exists('g:DovishCopyFile')
-    " return
+  " return
   " endif
   " 需要 trash 命令
   nmap <silent><buffer> dd <Plug>(dovish_delete)
@@ -637,21 +637,21 @@ function s:setup_coc_on_support_filetype()
   noremap <buffer> <leader>la <Plug>(coc-codeaction)
   noremap <buffer> <leader>ls <Plug>(coc-codeaction-selected)
 
-	xmap <buffer> if <Plug>(coc-funcobj-i)
-	omap <buffer> if <Plug>(coc-funcobj-i)
-	xmap <buffer> af <Plug>(coc-funcobj-a)
-	omap <buffer> af <Plug>(coc-funcobj-a)
-	xmap <buffer> ik <Plug>(coc-classobj-i)
-	omap <buffer> ik <Plug>(coc-classobj-i)
-	xmap <buffer> ak <Plug>(coc-classobj-a)
-	omap <buffer> ak <Plug>(coc-classobj-a)
+  xmap <buffer> if <Plug>(coc-funcobj-i)
+  omap <buffer> if <Plug>(coc-funcobj-i)
+  xmap <buffer> af <Plug>(coc-funcobj-a)
+  omap <buffer> af <Plug>(coc-funcobj-a)
+  xmap <buffer> ik <Plug>(coc-classobj-i)
+  omap <buffer> ik <Plug>(coc-classobj-i)
+  xmap <buffer> ak <Plug>(coc-classobj-a)
+  omap <buffer> ak <Plug>(coc-classobj-a)
 
 
   inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+        \ pumvisible() ? coc#_select_confirm() :
+        \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
   function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
@@ -661,6 +661,7 @@ augroup configcoc
   autocmd!
   autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go call s:setup_coc_on_support_filetype()
   autocmd configcoc Filetype markdown noremap <buffer> <S-M-f> :CocCommand markdownlint.fixAll<cr>
+  autocmd configcoc Filetype vim noremap <buffer> <S-M-f> gg=G<C-o>
 augroup END
 
 call plug#end()
