@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 
-
 # shellcheck disable=SC1091
 source setup/setup_source.bash
 
 install_package tldr
 os_command_is_installed duf || brew install duf
-os_command_is_installed lsd ||  brew install lsd
-os_command_is_installed broot ||  brew install broot
+os_command_is_installed lsd || brew install lsd
+os_command_is_installed broot || brew install broot
 
 os_command_is_installed dust || {
   os_is_linux && brew tap tgotwig/linux-dust && brew install dust
   os_is_darwin && brew install dust
 }
-
 
 # afx
 os_command_is_installed afx || {

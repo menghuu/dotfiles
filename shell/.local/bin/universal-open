@@ -6,14 +6,13 @@
 
 [[ "$(uname)" =~ CYGWIN ]] && cygstart "$@"
 
-[[ -n "$WSL_DISTRO_NAME" ]] && {
-  filepaths=''
-  for path in "$@"; do
-    filepaths="$filepath $(wslpath -w "$path")"
-  done
-  powershell.exe -Command "Invoke-Item $filepaths"
+[[ -n $WSL_DISTRO_NAME ]] && {
+	filepaths=''
+	for path in "$@"; do
+		filepaths="$filepath $(wslpath -w "$path")"
+	done
+	powershell.exe -Command "Invoke-Item $filepaths"
 }
-
 
 # 1. copy this file into ~/.local/bin
 # 2. chmod u+x ~/.local/bin/universal-open

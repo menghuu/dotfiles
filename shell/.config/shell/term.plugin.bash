@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # 正确设置 term 变量
 # 复制自 https://vim.fandom.com/wiki/256_colors_in_vim
 SCREEN_COLORS=$(tput colors)
@@ -16,7 +15,8 @@ if [ -z "$SCREEN_COLORS" ]; then
     ;;
   *-256color)
     echo "Unknown terminal $TERM. Falling back to 'xterm-256color'."
-    export TERM=xterm-256color; export COLORTERM=truecolor # 参考 https://github.com/termstandard/colors
+    export TERM=xterm-256color
+    export COLORTERM=truecolor # 参考 https://github.com/termstandard/colors
     ;;
   esac
   SCREEN_COLORS=$(tput colors)
