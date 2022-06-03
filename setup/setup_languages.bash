@@ -7,8 +7,8 @@
 source ./setup/setup_source.bash
 
 function npm_install() {
-  os_command_is_installed cnpm && cnpm install --location=global --force $@ || {
-    os_command_is_installed npm && npm install --location=global --force $@
+  os_command_is_installed cnpm && cnpm install --location=global --force "$@" || {
+    os_command_is_installed npm && npm install --location=global --force "$@"
   }
 }
 
@@ -26,14 +26,11 @@ os_command_is_installed pipx && {
 }
 
 # for python and docker
-npm_install pyright dockerfile-language-server-nodejs markdownlint markdownlint-cli markdownlint-cli2
+npm_install pyright dockerfile-language-server-nodejs markdownlint markdownlint-cli markdownlint-cli2 \
+  htmlhint prettier sql-formatter node-sql-parser vim-language-server stylelint-lsp
 
 # for go
 go install golang.org/x/tools/gopls@latest
 
 # A shell parser, formatter, and interpreter. Supports POSIX Shell, Bash, and mksh. Requires Go 1.17 or later.
-brew install shfmt
-
-# for lua
-# luarocks install --server=http://luarocks.org/dev lua-lsp
-# uarocks install luacheck
+brew install shfmt lua-language-server stylua

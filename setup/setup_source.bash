@@ -2,7 +2,7 @@
 
 top() {
   local -r SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]-$0}")" && pwd)"
-  utils_add_path "$SCRIPT_DIR/../shell/.local/lib/bash"
+  PATH="$SCRIPT_DIR/../shell/.local/lib/bash:$PATH"
 
   # shellcheck disable=SC1091
   source os.bash
