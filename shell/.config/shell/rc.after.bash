@@ -152,7 +152,6 @@ os_command_is_installed npm && {
 }
 os_command_is_installed yarn && {
   utils_add_path "$HOME/.yarn/bin" "$HOME/.config/yarn/global/node_modules/.bin"
-  export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 }
 
 # ranger
