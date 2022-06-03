@@ -1,4 +1,3 @@
-" Lazy loading
 " From https://github.com/junegunn/vim-plug/wiki/faq#conditional-activation
 function! Cond(cond, ...)
   let opts = get(a:000, 0, {})
@@ -112,7 +111,6 @@ let g:host='meng.hu'
 let g:templates_use_licensee=0
 let g:templates_name_prefix='.vim-template='
 " }}}
-
 " 这两个是为了 wilder 这个插件，这个依赖实在是太多了，而且各个都有自己的特殊依赖，太麻烦了
 Plug 'romgrk/fzy-lua-native'
 Plug 'nixprime/cpsm'
@@ -251,7 +249,7 @@ let g:targets_nl = 'nN'
 " Plug 'kana/vim-operator-user'
 
 " 虽然没有映射
-Plug 'liuchengxu/vim-clap', { 'do': { -> clap#installer#force_download() } }
+" Plug 'liuchengxu/vim-clap', { 'do': { -> clap#installer#force_download() } }
 
 
 " s 搜索下面的内容， S 搜索上面的内容
@@ -346,7 +344,6 @@ inoremap <c-_> <Esc>:Commentary<cr>ji
 " support html/css/js {{{
 Plug 'ap/vim-css-color'
 " }}}
-
 
 " tmux {{{
 " :Tmux send tmux command
@@ -624,6 +621,7 @@ nnoremap \Q <cmd>Bwipeout!<cr>
 " 大工程！
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_snippet_next = '<tab>'
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 function s:setup_coc_on_support_filetype()
   " 使用 vim 内置的 format 功能吧
   setl formatexpr=CocAction('formatSelected')
@@ -631,12 +629,23 @@ function s:setup_coc_on_support_filetype()
   nnoremap <buffer> <F8> <Plug>(coc-diagnostic-next)
   nnoremap <buffer> <S-F8> <Plug>(coc-diagnostic-prev)
   nnoremap <buffer> <F2> <Plug>(coc-rename)
-  nnoremap <buffer> <S-M-f> :PanguAll<cr>gg=G<C-o>
+  nnoremap <buffer> <S-M-f> gg=G<C-O>:PanguAll<cr><Plug>(coc-format)
   nnoremap <buffer> <F12> <Plug>(coc-definition)
   nnoremap <buffer> <C-F12> <Plug>(coc-implementation)
   nnoremap <buffer> <S-F12> <Plug>(coc-references)
   nnoremap <buffer> <c-space> <Plug>(coc-fix-current)
   nnoremap <buffer> <c-i> <Plug>(coc-fix-current)
+
+  inoremap <buffer> <F8> <Plug>(coc-diagnostic-next)
+  inoremap <buffer> <S-F8> <Plug>(coc-diagnostic-prev)
+  inoremap <buffer> <F2> <Plug>(coc-rename)
+  inoremap <buffer> <S-M-f> <esc>gg=G:PanguAll<cr><C-O><Plug>(coc-format)i
+  inoremap <buffer> <F12> <Plug>(coc-definition)
+  inoremap <buffer> <C-F12> <Plug>(coc-implementation)
+  inoremap <buffer> <S-F12> <Plug>(coc-references)
+  inoremap <buffer> <c-space> <Plug>(coc-fix-current)
+  inoremap <buffer> <c-i> <Plug>(coc-fix-current)
+
 
   " noremap <buffer> <leader>ln <Plug>(coc-diagnostic-next)
   " noremap <buffer> <leader>lp <Plug>(coc-diagnostic-prev)
@@ -661,7 +670,6 @@ function s:setup_coc_on_support_filetype()
   xmap <buffer> ak <Plug>(coc-classobj-a)
   omap <buffer> ak <Plug>(coc-classobj-a)
 
-
   inoremap <silent><expr> <TAB>
         \ pumvisible() ? coc#_select_confirm() :
         \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -674,11 +682,37 @@ function s:setup_coc_on_support_filetype()
 endfunction
 augroup configcoc
   autocmd!
-  autocmd configcoc Filetype json,python,vim,sh,bash,ts,md,markdown,lua,go,vim,bash,sh,mksh call s:setup_coc_on_support_filetype()
+  autocmd configcoc Filetype json,yaml,dockerfile,swagger,md,markdown,python,vim,lua,go,vim,bash,sh,mksh,ts,flow,vue,html,scss,css call s:setup_coc_on_support_filetype()
   autocmd configcoc Filetype markdown nnoremap <buffer> <S-M-f> :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
+  autocmd configcoc Filetype markdown inoremap <buffer> <S-M-f> <C-O>:PanguAll<cr><C-O>:CocCommand markdownlint.fixAll<cr>
   autocmd configcoc Filetype markdown nnoremap <buffer> <leader>lf :PanguAll<cr>:CocCommand markdownlint.fixAll<cr>
+  autocmd configcoc Filetype sql nnoremap <buffer> <S-M-f> :PanguAll<cr>:CocCommand sql.Format<cr>
+  autocmd configcoc Filetype sql inoremap <buffer> <S-M-f> <C-O>:PanguAll<cr><C-O>:CocCommand sql.Format<cr>
+  autocmd configcoc Filetype sql nnoremap <buffer> <leader>lf :PanguAll<cr>:CocCommand sql.Format<cr>
+  autocmd configcoc Filetype vim nnoremap <buffer> <S-M-f> :PanguAll<cr>gg=G<C-O>
+  autocmd configcoc Filetype vim inoremap <buffer> <S-M-f> <esc>:PanguAll<cr>gg=G<C-O>i
+  autocmd configcoc Filetype vim nnoremap <buffer> <leader>lf :PanguAll<cr>gg=G<C-O>
 augroup END
 
+let g:coc_global_extensions = ['coc-lightbulb','coc-lists','coc-snippets',"coc-tasks","coc-yank"]
+" not lsp-server
+let g:coc_global_extensions += ['coc-sql','coc-markdownlint','coc-swagger']
+" lsp-server
+let g:coc_global_extensions += ['coc-docker','coc-json','coc-yaml','coc-pyright','coc-vimlsp','coc-sh','coc-go','coc-tsserver']
+" TODO coc-stylelintplus
+let g:coc_global_extensions += ['coc-html','coc-htmlhint','coc-stylelintplus']
+" TODO
+" let g:coc_global_extensions += ['coc-stylua']
+let g:coc_global_extensions += ['coc-sumneko-lua']
+" let g:coc_global_extensions += ['coc-lua']
+" TODO
+" format ts,flow,json,css,scss,less,html,vue,angular HANDLEBARS,Ember,Glimmer,GraphQL,Markdown,YAML
+let g:coc_global_extensions += ["coc-prettier"]
+let g:coc_global_extensions += ["https://github.com/rafamadriz/friendly-snippets@main"]
+" let g:coc_global_extensions = []
 call plug#end()
 finish
 " source ~/.vim/plugin/config.tabularize.vim
+
+
+" inoremap <buffer> <S-M-f> <c-o>:PanguAll<cr><c-o>:CocCommand markdownlint.fixAll<cr>

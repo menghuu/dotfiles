@@ -14,10 +14,9 @@ install:
 	\vim +PlugClean +qall
 	\vim +PlugUpdate! +qall
 	nvim +PackerSync
+	\vim +CocUpdate
 	pip install pynvim neovim-remote
 	chmod u+x plugged/vim-gutentags/plat/unix/*.sh
-	\vim "+CocInstall coc-json coc-pyright coc-vimlsp coc-snippets coc-sh coc-go coc-tsserver coc-markdownlint coc-sumneko-lua"
-	\vim "+CocInstall https://github.com/rafamadriz/friendly-snippets@main"
 clean:
 	rm autoload/plug.vim
 	rm -fr ~/.local/share/nvim/site/pack/packer
@@ -25,3 +24,4 @@ clean:
 	rm -f ./autoload/plug.vim
 	rm -fr ./plugged
 	rm -f ~/.cache/nvim/luacache_chunks
+	rm -fr ~/.config/coc

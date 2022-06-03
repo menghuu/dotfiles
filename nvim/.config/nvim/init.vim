@@ -48,7 +48,7 @@ LoadScript user/keymaps.vim
 let g:colors_name = 'torte'
 LoadScript user/install-plugins.vim
 " call plug#begin(get(g:, 'home', '~/.vim') . '/plugged')
-  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " call plug#end()
 
 

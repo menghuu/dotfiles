@@ -117,7 +117,6 @@ local packer_install_tbl = {
     ["folke/trouble.nvim"] = {
         requires = 'kyazdani42/nvim-web-devicons'
     },
-    ["Plug 'folke/lsp-colors.nvim'"] = {},
     -- ["feline-nvim/feline.nvim"] = {},
 
     -- https://github.com/romgrk/barbar.nvim
@@ -132,12 +131,13 @@ local packer_install_tbl = {
 	 ----- language server protocol ----
 	=====================================
 	--]]
-    ["neovim/nvim-lspconfig"] = { -- Basic LSP configuration support
-        after = { "impatient.nvim" },
-    },
-    ["williamboman/nvim-lsp-installer"] = { -- automatically install LSP service
-        after = { "nvim-lspconfig", "cmp-nvim-lsp", "aerial.nvim", "lua-dev.nvim", "null-ls.nvim" },
-    },
+    -- ["neovim/nvim-lspconfig"] = { -- Basic LSP configuration support
+        -- after = { "impatient.nvim" },
+    -- },
+    -- ["williamboman/nvim-lsp-installer"] = { -- automatically install LSP service
+        -- after = { "nvim-lspconfig" },
+    -- },
+    -- ["Plug 'folke/lsp-colors.nvim'"] = {},
     --[[
 	=====================================
 	 ----------- Code Editor -----------

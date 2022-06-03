@@ -1,4 +1,4 @@
--- conf_hop: 此插件及其不成熟，bug太多了，文档也不成熟，暂时不使用了，实际上，easymotion 也不是很有用啊
+-- conf_hop: 此插件及其不成熟，bug 太多了，文档也不成熟，暂时不使用了，实际上，easymotion 也不是很有用啊
 -- url: https://github.com/phaazon/hop.nvim
 local mappping = require('core.mapping')
 
@@ -20,51 +20,50 @@ M.before = function() end
 -- vim.api.nvim_set_keymap('o', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END, inclusive_jump = true })<cr>", {})
 
 M.load = function()
-    -- options = { silent = true, noremap=true }
+	-- options = { silent = true, noremap = true }
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>f',
+	--     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, inclusive_jump = false })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>F',
+	--     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, inclusive_jump = false })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>t',
+	--     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, inclusive_jump = true })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>T',
+	--     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, inclusive_jump = true })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>w',
+	--     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.AFTER_CURSOR, hint_position = require'hop.hint'.HintPosition.BEGIN })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>W',
+	--     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,  hint_position = require'hop.hint'.HintPosition.BEGIN })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>e',
+	--     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.AFTER_CURSOR, hint_position = require'hop.hint'.HintPosition.END })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
+	-- vim.api.nvim_set_keymap(
+	--     '', '<leader><leader>E',
+	--     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,  hint_position = require'hop.hint'.HintPosition.END })<cr>",
+	--     { silent = true, noremap=true , desc = "" }
+	-- )
 
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>f',
-    --     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, inclusive_jump = false })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>F',
-    --     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, inclusive_jump = false })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>t',
-    --     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, inclusive_jump = true })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>T',
-    --     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, inclusive_jump = true })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>w',
-    --     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.AFTER_CURSOR, hint_position = require'hop.hint'.HintPosition.BEGIN })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>W',
-    --     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,  hint_position = require'hop.hint'.HintPosition.BEGIN })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>e',
-    --     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.AFTER_CURSOR, hint_position = require'hop.hint'.HintPosition.END })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
-    -- vim.api.nvim_set_keymap(
-    --     '', '<leader><leader>E',
-    --     "<cmd> lua require'hop'.hint_words({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,  hint_position = require'hop.hint'.HintPosition.END })<cr>",
-    --     { silent = true, noremap=true , desc = "" }
-    -- )
 
-
-    require('hop').setup {}
+	require('hop').setup {}
 end
 
 M.after = function() end
