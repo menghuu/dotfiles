@@ -18,8 +18,8 @@ let g:is_osx = has('macunix')
 let g:is_linux = has('unix') && !has('macunix') && !has('win32unix')
 let g:is_windows = (has('win16') || has('win32') || has('win64'))
 let g:is_unixlike = !is_windows
-let s:uname = system("uname -s")
-let g:is_freebsd = (match(s:uname, 'FreeBSD') >= 0)
+" let s:uname = has("uname -s")
+" let g:is_freebsd = (match(s:uname, 'FreeBSD') >= 0)
 
 
 "  exec 'source '.s:home.'init/init-source.vim'

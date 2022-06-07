@@ -157,9 +157,9 @@ noremap <leader>ft <cmd>Tags<cr>
 "  noremap <leader>fl :<C-u>Lines<CR>
 " 参考自fzf.vim   https://github.com/junegunn/fzf.vim/blob/d5f1f8641b24c0fd5b10a299824362a2a1b20ae0/plugin/fzf.vim#L57
 command! -bang -nargs=* Grep call fzf#vim#grep("grep --line-number --color=always -r --exclude-dir=.git -- ".shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
-if system('command -v rg') =~ '\w\+'
+if executable('rg')
   noremap <leader>fg <cmd>Rg<cr>
-elseif system('command -v ag') =~ '\w\+'
+elseif executable('ag')
   noremap <leader>fg <cmd>Ag<cr>
 else
   noremap <Leader>fg <cmd>Grep<cr>
