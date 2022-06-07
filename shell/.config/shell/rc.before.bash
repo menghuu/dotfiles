@@ -16,8 +16,6 @@ source log.bash
 # shellcheck disable=SC1091
 source os.bash
 # shellcheck disable=SC1091
-source proxy.bash
-# shellcheck disable=SC1091
 source script.source.bash
 # shellcheck disable=SC1091
 source string.bash

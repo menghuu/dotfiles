@@ -15,7 +15,8 @@ source_plugins \
   less.plugin.bash \
   term.plugin.bash \
   tldr.plugin.bash \
-  zlua.plugin.bash
+  zlua.plugin.bash \
+  proxy.plugin.bash
 
 # https://unix.stackexchange.com/questions/332791/how-to-permanently-disable-ctrl-s-in-terminal
 # disable ctrl-s ctrl-q in bash
