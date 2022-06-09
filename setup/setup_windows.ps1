@@ -189,12 +189,15 @@ winget install JanDeDobbeleer.OhMyPosh
 Install-Module -Name PSReadLine -AllowPrerelease
 
 
-foreach ($package in 'main', 'git', 'nvim') {
+foreach ($package in 'main', 'git') {
 	dploy stow "$Env:USERPROFILE/dotfiles/$package" $Env:USERPROFILE
 }
-New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\dotfiles\windows\Microsoft.PowerShell_profile.ps1" -Target "$Env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
-New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\vimfiles" -Target "$Env:USERPROFILE\.config\nvim"
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-rm "$Env:USERPROFILE\AppData\Local\nvim\"
-New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\AppData\Local\nvim" -Target "$Env:USERPROFILE\.config\nvim"
-New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\_vimrc" -Target "$Env:USERPROFILE\.config\nvim\init.vim"
+
+# TODO config nvim/vim
+#dploy stow "$Env:USERPROFILE/dotfiles/nvim" $Env:USERPROFILE
+#New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\dotfiles\windows\Microsoft.PowerShell_profile.ps1" -Target "$Env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+#New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\vimfiles" -Target "$Env:USERPROFILE\.config\nvim"
+#curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#rm "$Env:USERPROFILE\AppData\Local\nvim\"
+#New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\AppData\Local\nvim" -Target "$Env:USERPROFILE\.config\nvim"
+#New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\_vimrc" -Target "$Env:USERPROFILE\.config\nvim\init.vim"
