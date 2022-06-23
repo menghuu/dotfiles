@@ -4,6 +4,7 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 nvim/.config/nvim/localconfigs.vim
 .git
 .vscode
+sessions
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,visualstudiocode,macos,windows,linux,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,visualstudiocode,macos,windows,linux,python
