@@ -204,6 +204,7 @@ Install-Module -Name PSReadLine -AllowPrerelease
 foreach ($package in 'main', 'git') {
 	dploy stow "$Env:USERPROFILE/dotfiles/$package" $Env:USERPROFILE
 }
+New-Item -ItemType SymbolicLink -Path "$Env:USERPROFILE\.gitconfig" -Target "$Env:USERPROFILE\.config\git\windows.gitconfig"
 
 # TODO config nvim/vim
 #dploy stow "$Env:USERPROFILE/dotfiles/nvim" $Env:USERPROFILE

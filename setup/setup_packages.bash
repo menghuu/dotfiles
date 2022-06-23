@@ -36,6 +36,7 @@ os_command_is_installed brew && {
 # stow
 install_package stow
 command stow -t ~ main shell nvim git
+ln -s ~/.config/git/base.gitconfig ~/.gitconfig
 
 # u-ctags and global(gtags)
 install_package ctags

@@ -12,7 +12,6 @@
 	encoding = utf-8
 [i18n "commit"]
 	encoding = utf-8
-
 [i18n]
 	logoutputencoding = utf-8
 [alias]
@@ -23,18 +22,25 @@
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%C(yellow)%h%Creset %ad | %C(green)%s%Creset%Cred%d%Creset [%an]\" --graph --date=short
-
 [core]
-pager = ~/.local/bin/pager.bash
+    pager = ~/.local/bin/pager.bash
 [interactive]
-diffFilter = ~/.local/bin/pager.bash --color-only
+    diffFilter = ~/.local/bin/pager.bash --color-only
 [merge]
-conflictstyle = diff3
+    conflictstyle = diff3
 [diff]
-colorMoved = default
+    colorMoved = default
 [delta "default"]
-file-decoration-style= blue box
-hunk-header-decoration-style = purple ol
+    file-decoration-style= blue box
+    hunk-header-decoration-style = purple ol
 [delta]
-features = default
-navigate = true  # use n and N to move between diff sections
+    features = default
+    navigate = true  # use n and N to move between diff sections
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  $LOCAL $REMOTE"
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait $MERGED"
