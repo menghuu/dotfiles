@@ -1,4 +1,5 @@
 channels:
+  - conda-forge
   - defaults
 show_channel_urls: true
 default_channels:
@@ -13,3 +14,4 @@ custom_channels:
   pytorch: http://mirrors.aliyun.com/anaconda/cloud
   pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: http://mirrors.aliyun.com/anaconda/cloud
+channel_priority: strict
