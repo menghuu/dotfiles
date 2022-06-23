@@ -199,6 +199,7 @@ scoop install delta
 
 
 # setup powershell
+winget install --id Microsoft.Powershell --source winget
 winget install JanDeDobbeleer.OhMyPosh
 Install-Module -Name PSReadLine -AllowPrerelease
 
