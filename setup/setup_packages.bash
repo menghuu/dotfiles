@@ -14,6 +14,7 @@ install_package shellcheck
 install_package fdfind fd-find || brew install fd
 install_package ag ripgrep || brew install ripgrep
 install_package go
+install_package tig
 
 os_command_is_installed delta || brew install delta
 os_command_is_installed cheat || brew install cheat
