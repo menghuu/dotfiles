@@ -33,7 +33,6 @@ sessions
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -222,7 +221,7 @@ cython_debug/
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+!*.svg # comment out if you don't need vector files
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -291,7 +290,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,visualstudiocode,macos,windows,linux,python
-
 
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
