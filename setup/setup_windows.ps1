@@ -83,6 +83,7 @@ winget install EuSoft.Eudic
 # 社交工具
 winget install Tencent.TIM
 winget install Tencent.WeChat
+wignet install ByteDance.Feishu
 # 企业微信
 winget install Tencent.wechat-work
 # 论文管理
@@ -132,8 +133,8 @@ winget install Appest.Dida
 scoop install Pomotodo
 # 磁盘
 winget install Win32diskimager.win32diskimager
-winget Rufus.Rufus
-winget Eassos.DiskGenius
+winget install Rufus.Rufus
+winget install Eassos.DiskGenius
 # 字体
 scoop install CascadiaCode-NF CascadiaCode-NF-Mono
 # 围棋
@@ -144,6 +145,8 @@ winget install Valve.Steam
 # 备份
 winget install Duplicati.Duplicati
 winget install Kopia.KopiaUI
+# 键盘按键映射
+winget install sharpkeys
 # 其他软件
 # 罗技鼠标的官方管理软件
 winget install Logitech.Options
@@ -182,6 +185,15 @@ scoop install fd fzf ripgrep
 scoop install bat
 scoop install direnv
 scoop install gow
+scoop install ffmpeg
+scoop install losslesscut
+scoop install dismplusplus
+scoop install spacesniffer
+scoop install v2rayn
+scoop install ventoy
+scoop install rclone
+scoop install hugo hugo-extended
+scoop install delta
 
 
 # setup powershell
