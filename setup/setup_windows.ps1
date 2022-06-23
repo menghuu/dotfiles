@@ -90,8 +90,10 @@ winget install Tencent.wechat-work
 winget install Zotero.Zotero
 # 图片
 winget isntall DuongDieuPhap.ImageGlass
-winget install GIMP.GIMP
+winget install jurplel.qView
+winget install IrfanSkiljan.IrfanView
 winget install Bandisoft.Honeyview
+winget install GIMP.GIMP
 winget install KDE.digikam
 winget install Billfish.Billfish
 # 截图
