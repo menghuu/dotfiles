@@ -135,6 +135,7 @@ os_command_is_installed pipx && {
 # configure go
 os_command_is_installed go && {
   export GOPROXY=https://proxy.golang.com.cn,direct
+  export GO111MODULE=on
   utils_add_path "$HOME/go/bin"
 }
 

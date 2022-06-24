@@ -61,3 +61,7 @@ if ( Get-Command lazygit ) {
 
 
 Set-Alias ll Get-ChildItem
+
+$env:GO111MODULE="on"
+$env:GOPROXY = "https://proxy.golang.com.cn,direct"
+# $env:GOPRIVATE = "git.mycompany.com,github.com/my/private"
