@@ -69,6 +69,8 @@ winget install Microsoft.WindowsTerminal
 winget install Git.Git
 winget install TortoiseGit.TortoiseGit
 scoop install lazygit
+winget install GitKraken
+winget install GitExtensionsTeam.GitExtensions
 # 解压缩软件
 winget install Bandisoft.Bandizip
 # 下载工具
