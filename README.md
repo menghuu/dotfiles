@@ -27,5 +27,5 @@ chmod u+x ./setup/setup_brew.bash
 ## stow it
 
 ```sh
-stow ~ main shell nvim git
+stow -t ~ main shell nvim git
 ```
