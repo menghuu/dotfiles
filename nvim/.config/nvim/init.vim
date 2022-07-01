@@ -47,9 +47,18 @@ LoadScript user/keymaps.vim
 " let g:colors_name = 'slate'
 let g:colors_name = 'torte'
 LoadScript user/install-plugins.vim
-" call plug#begin(get(g:, 'home', '~/.vim') . '/plugged')
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" call plug#end()
+"  call plug#begin(get(g:, 'home', '~/.vim') . '/plugged')
+"    " template support {{{
+"    Plug 'aperezdc/vim-template'
+"    " let g:templates_directory = [fnamemodify(resolve(expand('<sfile>:p')), ':h') . '/../templates']
+"    let g:templates_directory = ['~/.config/nvim/templates']
+"    let g:username = 'Hu Meng'
+"    let g:email = 'mail@meng.hu'
+"    let g:host='meng.hu'
+"    let g:templates_use_licensee=0
+"    let g:templates_name_prefix='.vim-template='
+"    " }}}
+call plug#end()
 
 
 if is_nvim

@@ -71,7 +71,10 @@ xmap ah <plug>(signify-motion-outer-visual)
 Plug 'liuchengxu/vim-which-key' ", { 'on': ['WhichKey', 'WhichKey!'] }
 " TODO: 探索更多的设置
 let g:loaded_config_which_key = 1
-autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
+augroup config_vim_which_key
+  autocmd!
+  autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
+augroup END
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 nnoremap <silent> ] :<c-u>WhichKey ']'<CR>
