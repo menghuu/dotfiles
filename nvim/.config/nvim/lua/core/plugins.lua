@@ -26,11 +26,10 @@ local packer_install_tbl = {
     ["nvim-lua/plenary.nvim"] = {},
     -- https://github.com/rcarriga/nvim-notify
     ["rcarriga/nvim-notify"] = { -- fancy notification message
-        event = { "BufRead", "BufNewFile" },
+        -- event = { "BufRead", "BufNewFile" },
     },
     -- https://github.com/lewis6991/gitsigns.nvim
     ['lewis6991/gitsigns.nvim'] = {},
-
     -- https://github.com/RRethy/nvim-base16
     ["RRethy/nvim-base16"] = {},
 
@@ -85,7 +84,7 @@ local packer_install_tbl = {
     -- ['famiu/bufdelete.nvim'] = {},
     -- https://github.com/folke/which-key.nvim
     ["folke/which-key.nvim"] = { -- keybinder
-        event = { "BufRead", "BufNewFile" },
+        -- event = { "BufRead", "BufNewFile" },
     },
     -- 如果这个插件稳定了，使用这一个？
     -- ['ggandor/leap.nvim'] = {},
@@ -160,18 +159,9 @@ local packer_install_tbl = {
     -- },
 }
 
--- local packer_install_tbl = {
---     ['nvim-treesitter/nvim-treesitter'] = {
---         run = ':TSUpdate'
---     },
---     -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
---     ['nvim-treesitter/nvim-treesitter-textobjects'] = {
---         require = { {'nvim-treesitter/nvim-treesitter'} }
---     },
--- }
 
 Packer_bootstrap = (function()
-    local packer_install_path = util.join_paths(vim.fn.stdpath("data"), "site/pack/packer/start/packer.nvim")
+    local packer_install_path = util.join_paths(vim.fn.stdpath("data"), "/site/pack/packer/start/packer.nvim")
     ---@diagnostic disable-next-line: missing-parameter
     if vim.fn.empty(vim.fn.glob(packer_install_path)) > 0 then
         local rtp_addition = vim.fn.stdpath("data") .. "/site/pack/*/start/*"
