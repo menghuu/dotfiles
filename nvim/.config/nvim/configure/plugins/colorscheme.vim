@@ -2,7 +2,7 @@ Plug 'arcticicestudio/nord-vim'
 " autocmd VimEnter * colorscheme nord
 let g:colors_name = 'nord'
 
- Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 "   autocmd VimEnter * colorscheme base16-onedark
 "   autocmd VimEnter * colorscheme base16-materia
 " autocmd VimEnter * colorscheme base16-monokai
