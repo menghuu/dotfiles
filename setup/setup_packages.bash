@@ -32,6 +32,8 @@ os_command_is_installed brew && {
   curl -qL https://www.npmjs.com/install.sh | sh
   curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 }
+npm install -g yarn
+npm install -g yrm
 
 # stow
 install_package stow
